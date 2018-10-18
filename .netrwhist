@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/edson.junior/.oh-my-zsh/plugins'
 let g:netrw_dirhist_2='/Users/edson.junior/.vim'
 let g:netrw_dirhist_3='/Users/edson.junior/Projects/point-of-sale-service'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/edson.junior/Projects/point-of-sale-service/src'
 let g:netrw_dirhist_5='/Users/edson.junior/Projects/point-of-sale-service/src/services'
 let g:netrw_dirhist_6='/Users/edson.junior/Projects/point-of-sale-service/src/services/v1'
 let g:netrw_dirhist_7='/Users/edson.junior/Projects/point-of-sale-service/src/services/v1/pos'
+let g:netrw_dirhist_8='/Users/edson.junior/Projects/point-of-sale-service'
+let g:netrw_dirhist_9='/Users/edson.junior/Projects/point-of-sale-service/src'

@@ -1,10 +1,11 @@
 execute pathogen#infect()
 
+let g:material_theme_style = 'palenight'
+let g:airline_powerline_fonts = 1
+
 set path=**
 
-let g:material_theme_style = 'palenight'
-
-colorscheme material 
+colorscheme onedark 
 syntax enable 
 set tabstop=2
 set softtabstop=2
@@ -25,6 +26,7 @@ filetype indent on
 set wildmenu
 set lazyredraw
 set showmatch
+set wildignore=**/node_modules/**
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -34,19 +36,9 @@ let mapleader=","       " leader is comma
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
 
-set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
-
-" space open/closes folds
-nnoremap <space> za
-
 " move lines faster 
 nnoremap <leader>m :m+
 nnoremap <leader>M :m-
-
-set foldmethod=indent   " fold based on indent level
-
 
 " move vertically by visual line
 nnoremap j gj
@@ -59,11 +51,23 @@ nnoremap E $
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" Fast shell comands
+nnoremap <leader><space> :!
+
+" Others utilities
+nnoremap <leader>o :find 
+nnoremap <leader>f :Ag 
+
+
+
 " jk is escape
 inoremap jk <esc>
 
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
+" Shortcut for autocompletion
+inoremap <tab> <C-N>
 
 
 
