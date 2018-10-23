@@ -9,23 +9,25 @@ colorscheme onedark
 syntax enable 
 set tabstop=2
 set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
-
 set ai                  "Auto indent
 set si                  "Smart indent
 set wrap                "Wrap lines
-
-" set number
 set relativenumber
 set ruler
 set showcmd
 set cursorline
+set noswapfile
+set autoread
+set shiftround
 
-filetype indent on
+filetype plugin indent on
 set wildmenu
 set lazyredraw
 set showmatch
+set noshowmode
 set wildignore=**/node_modules/**
 
 set incsearch           " search as characters are entered
@@ -34,7 +36,7 @@ set hlsearch            " highlight matches
 let mapleader=","       " leader is comma
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader>/ :nohlsearch<CR> 
 
 " move lines faster 
 nnoremap <leader>m :m+
@@ -59,7 +61,7 @@ nnoremap <leader><space> :!
 
 " Others utilities
 nnoremap <leader>o :find 
-nnoremap <leader>f :Ag 
+" nnoremap <leader>f :Files<CR> 
 
 
 
@@ -67,7 +69,7 @@ nnoremap <leader>f :Ag
 inoremap jk <esc>
 
 " Shortcut for autocompletion
-inoremap <tab> <C-N>
+inoremap <leader><tab> <C-N>
 
 
 
