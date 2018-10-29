@@ -6,10 +6,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mhartington/oceanic-next'
 Plugin 'mxw/vim-jsx'
+Plugin 'tpope/vim-fugitive'
+Plugin 'othree/html5.vim'
+Plugin 'w0rp/ale'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -19,16 +20,19 @@ call vundle#end()
 syntax enable 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='oceanicnext'
+:let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline_theme='wombat'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 let g:jsx_ext_required = 0 
 
-if (has("termguicolors"))
-  set termguicolors
-endif
 
-colorscheme gruvbox
+let &t_Co=256
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+colorscheme pandemic
 
 filetype plugin indent on   
 
@@ -42,7 +46,8 @@ set smarttab
 set ai                  "Auto indent
 set si                  "Smart indent
 set wrap                "Wrap lines
-set relativenumber
+set number relativenumber
+set noshowmode
 set ruler
 set showcmd
 set cursorline
@@ -50,9 +55,9 @@ set noswapfile
 set autoread
 set shiftround
 set wildmenu
+set wildignore+=**/node_modules/**
 set lazyredraw
 set showmatch
-set wildignore=**/node_modules/**
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
@@ -84,10 +89,32 @@ nnoremap <leader><space> :!
 
 " Others utilities
 nnoremap <leader>o :find 
-nnoremap <leader>f :Files<CR> 
+nnoremap <leader>O :Files<CR> 
+
+" Search and replace the current word
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+
 
 " jk is escape
 inoremap jk <esc>
 
 " Shortcut for autocompletion
 inoremap <leader><tab> <C-N>
+
+" Buffers utils
+nnoremap ` :buffers<CR>:buffer<Space>
+nnoremap <leader>q :bd<CR>
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+" It's useful to show the buffer number in the status line.
+set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P

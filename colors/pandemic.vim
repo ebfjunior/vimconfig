@@ -1,4 +1,5 @@
-" File: afterglow.vim
+
+" File: pandemic.vim
 " Author: Danilo Augusto <daniloaugusto.ita16@gmail.com>
 " Date: 2017-02-27
 " Vim color file - Afterglow (monokai version)
@@ -13,19 +14,19 @@ if version > 580
     endif
 endif
 
-let g:colors_name = "afterglow"
+let g:colors_name = "pandemic"
 
 " Default GUI Colours
-let s:foreground = "d6d6d6"
-let s:background = "1a1a1a"
+let s:foreground = "cacada"
+let s:background = "303030"
 let s:selection = "5a647e"
 let s:line = "393939"
 let s:comment = "797979"
 let s:red = "ac4142"
-let s:orange = "e87d3e"
-let s:yellow = "e5b567"
-let s:green = "b4c973"
-let s:blue = "6c99bb"
+let s:orange = "fabd2f"
+let s:yellow = "f4ce6e"
+let s:green = "9ac48b"
+let s:blue = "62c1bb"
 let s:wine = "b05279"
 let s:purple = "9e86c8"
 let s:window = "4d5057"
@@ -400,6 +401,21 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("javaScriptExceptions", s:red, "", "")
     call <SID>X("javaScriptDeprecated", s:red, "", "")
     call <SID>X("javaScriptError", s:red, "", "")
+
+    call <SID>X("jsDot", s:purple, "", "")
+    call <SID>X("jsObjectKey", s:green, "", "")
+    call <SID>X("jsObjectShorthandProp", s:blue, "", "")
+    call <SID>X("jsFuncArgs", s:yellow, "", "")
+    call <SID>X("jsDestructuringBlock", s:green, "", "")
+    call <SID>X("jsModuleKeyword", s:orange, "", "")
+    call <SID>X("jsTemplateExpression", s:green, "", "")
+    call <SID>X("jsClassKeyword", s:blue, "", "")
+    call <SID>X("jsExtendsKeyword", s:blue, "", "")
+    call <SID>X("jsClassFuncName", s:orange, "", "")
+    call <SID>X("jsArrowFunction", s:blue, "", "")
+
+    " XML / JSX
+    call <SID>X("xmlString", s:yellow, "", "")
 
     " LaTeX
     call <SID>X("texStatement",s:blue, "", "")

@@ -1155,10 +1155,7 @@ hi! link javascriptAwaitFuncKeyword GruvboxRed
 hi! link jsClassKeyword GruvboxAqua
 hi! link jsExtendsKeyword GruvboxAqua
 hi! link jsExportDefault GruvboxAqua
-hi! link jsObjectKey GruvboxAqua
-hi! link jsObjectShorthandProp GruvboxAqua
 hi! link jsTemplateBraces GruvboxAqua
-hi! link jsTemplateString GruvboxYellow
 hi! link jsGlobalNodeObjects GruvboxFg1
 hi! link jsGlobalObjects GruvboxFg1
 hi! link jsFunction GruvboxAqua
