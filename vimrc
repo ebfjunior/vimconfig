@@ -126,3 +126,8 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 " It's useful to show the buffer number in the status line.
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+"TMux shortcuts
+nnoremap <leader>vo :call VimuxOpenRunner()<CR><C-b><Down>
+nnoremap <leader>vc :call VimuxCloseRunner()<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
