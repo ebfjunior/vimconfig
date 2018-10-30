@@ -15,12 +15,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'benmills/vimux'
 call vundle#end()            
 
 syntax enable 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-:let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_theme='wombat'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -55,13 +56,20 @@ set noswapfile
 set autoread
 set shiftround
 set wildmenu
-set wildignore+=**/node_modules/**
+set wildignore=**/node_modules/**
 set lazyredraw
 set showmatch
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 let mapleader=","       " leader is comma
+
+" Undo configs
+set hidden
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
 
 " turn off search highlight
 nnoremap <leader>/ :nohlsearch<CR> 
