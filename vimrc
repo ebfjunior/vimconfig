@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()            
 
 syntax enable 
@@ -56,7 +57,7 @@ set noswapfile
 set autoread
 set shiftround
 set wildmenu
-set wildignore=**/node_modules/**
+set wildignore+=**/node_modules/**
 set lazyredraw
 set showmatch
 set incsearch           " search as characters are entered
@@ -96,8 +97,10 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader><space> :!
 
 " Others utilities
-nnoremap <leader>o :find 
-nnoremap <leader>O :Files<CR> 
+nnoremap <leader>O :find 
+nnoremap <leader>o :GFiles<CR> 
+nnoremap <leader>f :Ag<CR> 
+nnoremap <leader>F :Ag <C-R><C-W><CR>
 
 " Search and replace the current word
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
@@ -128,6 +131,11 @@ nnoremap <Leader>0 :10b<CR>
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 "TMux shortcuts
+nnoremap <leader>t <C-b><Down>
 nnoremap <leader>vo :call VimuxOpenRunner()<CR><C-b><Down>
 nnoremap <leader>vc :call VimuxCloseRunner()<CR>
-nnoremap <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vl :call VimuxRunLastCommand()<CR>
+
+" Nerdtree shortcuts
+nnoremap \ :NERDTreeToggle<CR>
+nnoremap <leader>\ :NERDTreeFind<CR>
