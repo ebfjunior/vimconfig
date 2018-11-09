@@ -62,6 +62,8 @@ set lazyredraw
 set showmatch
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set splitbelow
+set splitright
 
 let mapleader=","       " leader is comma
 
@@ -104,6 +106,7 @@ nnoremap <leader>F :Ag <C-R><C-W><CR>
 
 " Search and replace the current word
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+nnoremap <S-F> :/<C-r><C-w><CR><S-N>
 
 
 " jk is escape
@@ -139,3 +142,9 @@ nnoremap <Leader>vl :call VimuxRunLastCommand()<CR>
 " Nerdtree shortcuts
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap <leader>\ :NERDTreeFind<CR>
+
+" Split moving shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
