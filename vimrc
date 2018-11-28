@@ -80,6 +80,8 @@ nnoremap <leader>/ :nohlsearch<CR>
 " move lines faster 
 nnoremap <leader>m :m+
 nnoremap <leader>M :m-
+nnoremap ∆ :m+1<CR>
+nnoremap ˚ :m-2<CR>
 
 " move vertically by visual line
 nnoremap j gj
