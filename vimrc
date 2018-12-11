@@ -101,6 +101,7 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader><space> :!
 
 " Others utilities
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0) " Search only for file contents
 nnoremap <leader>O :find 
 nnoremap <leader>o :GFiles<CR> 
 nnoremap <leader>f :Ag<CR> 
@@ -142,6 +143,7 @@ nnoremap <leader>vc :call VimuxCloseRunner()<CR>
 nnoremap <Leader>vl :call VimuxRunLastCommand()<CR>
 
 " Nerdtree shortcuts
+let NERDTreeQuitOnOpen=1
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap <leader>\ :NERDTreeFind<CR>
 
