@@ -17,6 +17,8 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 Plugin 'scrooloose/nerdtree'
+Plugin 'janko-m/vim-test'
+Plugin 'metakirby5/codi.vim'
 call vundle#end()            
 
 syntax enable 
@@ -120,7 +122,7 @@ inoremap <leader><tab> <C-N>
 
 " Buffers utils
 nnoremap ` :buffers<CR>:buffer<Space>
-nnoremap <leader>q :bd<CR>
+nnoremap <leader>q :bd!<CR>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 nnoremap <Leader>1 :1b<CR>
@@ -141,6 +143,20 @@ nnoremap <leader>t <C-b><Down>
 nnoremap <leader>vo :call VimuxOpenRunner()<CR><C-b><Down>
 nnoremap <leader>vc :call VimuxCloseRunner()<CR>
 nnoremap <Leader>vl :call VimuxRunLastCommand()<CR>
+
+" Test settings
+nmap <silent> tn :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+nmap <silent> ts :TestSuite<CR>
+nmap <silent> tl :TestLast<CR>
+nmap <silent> tv :TestVisit<CR>
+
+function! DockerTransform(cmd) abort
+  return 'docker-compose run node '.shellescape(a:cmd)
+endfunction
+
+let g:test#custom_transformations = {'docker': function('DockerTransform')}
+let g:test#transformation = 'docker'
 
 " Nerdtree shortcuts
 let NERDTreeQuitOnOpen=1
