@@ -1,6 +1,8 @@
 set nocompatible             
 filetype off                  
 
+set clipboard=unnamed
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -160,6 +162,8 @@ let g:test#transformation = 'docker'
 
 " Nerdtree shortcuts
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows=0
 nnoremap \ :NERDTreeToggle<CR>
 nnoremap <leader>\ :NERDTreeFind<CR>
 
@@ -168,3 +172,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" resize panes
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
+nnoremap <silent> <Up> :resize +5<cr>
+nnoremap <silent> <Down> :resize -5<cr>
