@@ -21,6 +21,8 @@ Plugin 'benmills/vimux'
 Plugin 'scrooloose/nerdtree'
 Plugin 'janko-m/vim-test'
 Plugin 'metakirby5/codi.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'fatih/vim-go'
 call vundle#end()            
 
 syntax enable 
@@ -178,3 +180,10 @@ nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> <Up> :resize +5<cr>
 nnoremap <silent> <Down> :resize -5<cr>
+
+" Tags mappings
+nnoremap gd <C-]>
+nnoremap gdb <C-T>
+nnoremap gds <C-W><C-]>
+
+nnoremap <Leader>fix :ALEFix<CR>
