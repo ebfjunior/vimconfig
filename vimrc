@@ -23,13 +23,13 @@ Plugin 'janko-m/vim-test'
 Plugin 'metakirby5/codi.vim'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'fatih/vim-go'
+Plugin 'rakr/vim-one'
 call vundle#end()            
 
 syntax enable 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline_theme='wombat'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 let g:jsx_ext_required = 0 
@@ -41,11 +41,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 colorscheme pandemic
+let g:airline_theme='one'
+set background=dark
 
 filetype plugin indent on   
 
 set path=**
-set background=dark
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -187,3 +188,6 @@ nnoremap gdb <C-T>
 nnoremap gds <C-W><C-]>
 
 nnoremap <Leader>fix :ALEFix<CR>
+
+nnoremap <Leader>sn :set number relativenumber<CR>
+nnoremap <Leader>nn :set nonumber norelativenumber<CR>
