@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/edson.junior/Projects/point-of-sales'
-let g:netrw_dirhist_2='/Users/edson.junior/Projects/rainbow-bridge'
-let g:netrw_dirhist_3='/Users/ebfjunior/Projects/neogrid_front'
-let g:netrw_dirhist_4='/Users/edson.junior/Projects/hefesto'
-let g:netrw_dirhist_5='/Users/edson.junior/Projects/hefesto/src'
-let g:netrw_dirhist_6='/Users/edson.junior/Projects/point-of-sales'
-let g:netrw_dirhist_7='/Users/edson.junior/Projects/point-of-sales/src'
-let g:netrw_dirhist_8='/Users/edson.junior/Projects/point-of-sales'
-let g:netrw_dirhist_9='/Users/edson.junior/Projects/point-of-sales/src'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/ebfjunior1/.vim'
